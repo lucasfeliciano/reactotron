@@ -6,8 +6,6 @@ Control, monitor, and instrument your React DOM and React Native apps.  From the
 
 <img src='./images/Reactotron.gif' alt="Hello!" />
 
-<img src='./images/0.2.0.gif' alt="Hello!" />
-
 ### Platforms Supported
 
 * React Native 0.23+
@@ -38,7 +36,7 @@ Control, monitor, and instrument your React DOM and React Native apps.  From the
 
 # Running The Server
 
-`node_modules/.bin/reactotron`
+`node_modules/reactotron/bin/reactotron.js`
 
 Might be worth creating an alias or adding it to your script section of your `package.json`.
 
@@ -67,7 +65,9 @@ If you have `index.ios.js` or `index.android.js`, you can place this code somewh
 ```js
 import Reactotron from 'reactotron'
 
-Reactotron.connect()
+if (__DEV__) {
+  Reactotron.connect()
+}
 ```
 
 ### Redux Middleware (optional)
